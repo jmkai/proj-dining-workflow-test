@@ -1,0 +1,10 @@
+name: Hello
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh extension install yahsan2/gh-sub-issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: gh sub-issue --help
